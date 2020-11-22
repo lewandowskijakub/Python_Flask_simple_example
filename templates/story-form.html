@@ -9,7 +9,24 @@
 
 <form method="post" action="{{ url_for("add_story") }}">
     <label for="{{ headers[1] }}">Please insert {{ headers[1] }}</label>
-    <input type="text" value="New User Story" name="{{ headers[1] }}" id="{{ headers[1] }}">
+    <input type="text" value="Story Title" name="{{ headers[1] }}" id="{{ headers[1] }}">
+    <br>
+
+    <label for="{{ headers[2] }}">Please insert {{ headers[2] }}</label>
+    <input type="text" value="New User Story" name="{{ headers[2] }}" id="{{ headers[2] }}">
+    <br>
+
+    <label for="{{ headers[3] }}">Please insert {{ headers[3] }}</label>
+    <input type="text" value="Some Acceptance Criteria" name="{{ headers[3] }}" id="{{ headers[3] }}">
+    <br>
+
+    <label for="{{ headers[4] }}">Please choose {{ headers[4] }}</label>
+    <input type="number" min="1" max="100" value="50" name="{{ headers[4] }}" id="{{ headers[4] }}">
+    <br>
+
+    <label for="{{ headers[5] }}">Please choose {{ headers[5] }}</label>
+    <input type="number" min="1" max="40" value="1" name="{{ headers[5] }}" id="{{ headers[5] }}">
+    <br>
 
     <input type="submit" value="Add new Story">
 </form>

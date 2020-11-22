@@ -1,5 +1,16 @@
-
 HEADERS = ["Id", "Story Title", "User Story", "Acceptance Criteria", "Business Value", "Estimation", "Status"]
+STORIES = [{HEADERS[0]: 1, "Story Title": "Some title", "User Story": "After click button is everything okay",
+            "Acceptance Criteria": "Login button works", "Business Value": 100, "Estimation": 2,
+            "Status": "pending"},
+           {HEADERS[0]: 2, "Story Title": "Some title2", "User Story": "After login is logon",
+            "Acceptance Criteria": "User can login", "Business Value": 92, "Estimation": 1,
+            "Status": "done"},
+           {HEADERS[0]: 3, "Story Title": "Some title3", "User Story": "33333333333333333333333",
+            "Acceptance Criteria": "works", "Business Value": 87, "Estimation": 10,
+            "Status": "in-progress"}
+           ]
+
+STATUS = ["new", "pending", "in-progress", "done"]
 
 
 def get_headers():
@@ -7,16 +18,11 @@ def get_headers():
 
 
 def get_user_stories():
-    return [{HEADERS[0]: 1, "Story Title": "Some title", "User Story": "After click button is everything okay",
-             "Acceptance Criteria": "Login button works", "Business Value": 100, "Estimation": 2,
-             "Status": "pending"},
-            {HEADERS[0]: 2, "Story Title": "Some title2", "User Story": "After login is logon",
-             "Acceptance Criteria": "User can login", "Business Value": 92, "Estimation": 1,
-             "Status": "done"},
-            {HEADERS[0]: 3, "Story Title": "Some title3", "User Story": "33333333333333333333333",
-             "Acceptance Criteria": "works", "Business Value": 87, "Estimation": 10,
-             "Status": "in-progress"}
-            ]
+    return STORIES
+
+
+def get_statuses():
+    return STATUS
 
 
 def get_user_story(id):
@@ -26,3 +32,11 @@ def get_user_story(id):
             return story
 
     return {}
+
+
+def add_user_story(story):
+    STORIES.append(story)
+
+
+def get_new_id():
+    return STORIES[len(STORIES) - 1][HEADERS[0]] + 1

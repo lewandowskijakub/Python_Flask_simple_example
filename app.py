@@ -28,8 +28,12 @@ def add_story_form():
 
 @app.route('/stories', methods=["POST"])
 def add_story():
-    data = dict(request.form)
-    print(data)
+    new_story = dict(request.form)
+    headers = user_story.get_headers()
+    new_story[headers[0]] = user_story.get_new_id()
+    new_story[headers[6]] = user_story.get_statuses()[0]
+
+    user_story.add_user_story(new_story)
 
     return redirect(url_for("index"))
 
