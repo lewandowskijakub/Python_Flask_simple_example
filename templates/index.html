@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SuperSprinter!!!</title>
+
+</head>
+<body>
+<h1>User stories:</h1><br>
+
+<table>
+    <thead>
+    <tr>
+        <td>{{ headers[1] }}</td>
+        <td>{{ headers[4] }}</td>
+        <td>{{ headers[5] }}</td>
+        <td>{{ headers[6] }}</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for story in stories %} {# it is for loop and needs endfor #}
+        <tr>
+            <td>{{ story[headers[1]] }}</td>
+            <td>{{ story[headers[4]] }}</td>
+            <td>{{ story[headers[5]] }}</td>
+            <td>{{ story[headers[6]] }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
