@@ -40,3 +40,19 @@ def add_user_story(story):
 
 def get_new_id():
     return STORIES[len(STORIES) - 1][HEADERS[0]] + 1
+
+
+def get_default_story():
+    return {HEADERS[0]: None, HEADERS[1]: "Some title", HEADERS[2]: "Some story", HEADERS[3]: "Some criteraia",
+            HEADERS[4]: 50, HEADERS[5]: 1, HEADERS[6]: None}
+
+
+def edit_user_story(edited_story):
+    index_to_edit = -1
+
+    for i in range(len(STORIES)):
+        if STORIES[i][HEADERS[0]] == edited_story[HEADERS[0]]:
+            index_to_edit = i
+
+    if index_to_edit != -1:
+        STORIES[index_to_edit] = edited_story
