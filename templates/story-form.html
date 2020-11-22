@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new story</title>
+</head>
+<body>
+<a href="{{ url_for("index") }}">Go back to Main Menu</a><br>
+
+<form method="post" action="{{ url_for("add_story") }}">
+    <label for="{{ headers[1] }}">Please insert {{ headers[1] }}</label>
+    <input type="text" value="New User Story" name="{{ headers[1] }}" id="{{ headers[1] }}">
+
+    <input type="submit" value="Add new Story">
+</form>
+</body>
+</html>
